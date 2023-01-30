@@ -1,4 +1,4 @@
-const APP_URI = "https://job-board-quaghug.vercel.app/";
+const APP_URI = "https://job-board-quaghug.vercel.app";
 const MAIN_PAGE_URI = "/index"
 const form = document.getElementById("search-input");
 const search_board = document.getElementById("search-result");
@@ -69,7 +69,7 @@ function getJobs(uri, keyWord) {
 }
 
 function makeSignIn(uri, email, password) {
-    fetch(uri + "/verification", {
+    fetch(uri + "/verification/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -98,7 +98,7 @@ function makeRegister(uri, email, firstName, lastName, password, confirm_passwor
         errorText.setAttribute("class", "error-text");
         return register_error_card.appendChild(errorText);
     }
-    fetch(uri + "/api/users", {
+    fetch(uri + "/api/users/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
