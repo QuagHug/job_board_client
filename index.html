@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>JOBBOARD</title>
+</head>
+<body>
+    <nav class="navbar" id="nav-bar">
+        <h1 class="navbar-logo">JOBBOARD</h1>
+        <ul>
+            <a href="#jobs">Jobs</a>
+            <a href="#companies">Companies</a>
+            <a href="#about">About</a>
+        </ul>
+        <a href="./login.html" class="login" id="main_login_button">Sign-in</a>
+    </nav>
+    <div id="search-box">
+        <div id="search-text">Find your suitable jobs!!!</div>
+    </div>
+    <div id="search-card">
+        <input id="search-input" type="text" placeholder="Job title or keywords">
+        <button id="search-button">Search</button>
+    </div>
+    <div id="search-result">
+        <!-- <div class="job-card">
+            <img width="150" height="150" class="company-logo" src="data:image/png;base64,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" alt="company logo"/>
+            <div class="info-card">
+                <div class="job-info">Company name: Tesla</div>
+                <div class="job-info">Title: Dev</div>
+                <div class="job-info">Level: Senior</div>
+            </div>
+        </div> -->
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

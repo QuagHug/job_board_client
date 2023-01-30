@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="navbar-logo">JOBBOARD</h1>
+        <ul>
+            <a href="#jobs">Jobs</a>
+            <a href="#companies">Companies</a>
+            <a href="#about">About</a>
+        </ul>
+    </nav>
+    <div id="login-board">
+        <div id="login-card">
+            <span id="login-text">Sign-in</span>
+            <span id="register-text">Register</span>
+            <div id="login-input-card">
+                <input class="login-input" type="text" placeholder="Email" id="email-input">
+                <input class="login-input" type="password" placeholder="Password" id="password-input">
+                <button class="login-button" id="login-button">Sign-in</button>
+                <div id="error-card"></div>
+            </div>
+            <div id="register-input-card">
+                <input class="login-input" type="text" placeholder="Email" id="register-email-input">
+                <input class="login-input" type="text" placeholder="First name" id="register-first-name-input">
+                <input class="login-input" type="text" placeholder="Last name" id="register-last-name-input">
+                <input class="login-input" type="password" placeholder="Password" id="register-password-input">
+                <input class="login-input" type="password" placeholder="Confirm password" id="register-confirm-password-input">
+                <button class="login-button" id="register-button">Register</button>
+                <div id="register-error-card"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>

@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+*
+{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.navbar {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: orange;
+    padding: 15px;
+    box-shadow: 5px 5px 7px grey;
+}
+
+ul {
+    width: 17%;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul > a {
+    text-decoration: none;
+    color: whitesmoke;
+    margin: 5px;
+}
+
+.login {
+    background-color: orange;
+    color: black;
+    padding: 6px 6px 6px 6px;
+    width: 5%;
+    height: 100%;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 5%;
+}
+
+#search-text {
+    position: relative;
+    top: 20px;
+}
+
+#search-box {
+    margin: auto;
+    width: 55%;
+    height: 150px;
+    background-color: grey;
+    text-align: center;
+    border-radius: 15px;
+    position: relative;
+    bottom: 50px;
+    text-align: center;
+    z-index: -1;
+    color: white;
+    display: flex;
+    flex-direction: column-reverse;
+    font-size: 20;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-card {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #C5C5C5;
+    height: 40px;
+}
+
+#search-input {
+    border: none;
+    padding: 10px;
+    background-color: #C5C5C5;
+    cursor: pointer;
+    width: 80%;
+}
+
+
+#search-button {
+    height: 100%;
+    width: 20%;
+    margin: 0;
+    background-color: orange;
+    cursor: pointer;
+    border: none;
+}
+
+.job-card {
+    width: 80%;
+    margin: 10 auto;
+    padding: 20px;
+    background-color: whitesmoke;
+    box-shadow: 5px 5px 5px grey;
+
+}
+
+.info-card {
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+}
+
+.job-info {
+    padding: 5px;
+}
+
+#login-text {
+    font-weight: 600;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#register-text {
+    font-weight: 600;
+    padding: 10px;
+    color: grey;
+    cursor: pointer;
+}
+
+#login-board {
+    margin: 70px auto;
+    width: 40%;
+    padding: 25px;
+    background-color: orange;
+    border-radius: 10px;
+}
+
+#login-card {
+    margin: auto;
+    width: 60%;
+}
+
+#register-input-card {
+    display: none;
+}
+
+.login-input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 20px auto;
+}
+
+.login-button {
+    display: block;
+    background-color: black;
+    padding: 10px;
+    color: orange;
+    width: 100px;
+    margin: auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.error-text {
+    color: red;
+    margin: 10px;
+    font-weight: 700 ;
+}
+
+.success-text {
+    color: green;
+    margin: 10px;
+    font-weight: 700 ;
+}
