@@ -1,5 +1,5 @@
-const APP_URI = "http://localhost:4000";
-const MAIN_PAGE_URI = "http://127.0.0.1:5501/client/"
+const APP_URI = "https://job-board-quaghug.vercel.app/";
+const MAIN_PAGE_URI = "/index"
 const form = document.getElementById("search-input");
 const search_board = document.getElementById("search-result");
 const search_button = document.getElementById("search-button");
@@ -127,7 +127,7 @@ function makeRegister(uri, email, firstName, lastName, password, confirm_passwor
 }
 
 function checkLogin() {
-    fetch("http://localhost:4000/")
+    fetch(APP_URI)
     .then(async res => {
         const result = await res.json();
         if(res.status != 200) return;
