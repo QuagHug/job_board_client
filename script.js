@@ -72,7 +72,7 @@ function makeSignIn(uri, email, password) {
     fetch(uri + "/verification/", {
         method: "POST",
         headers: {
-            "Content-Type": "text/plain"
+            "Content-Type": "application/json"
         },
         body: JSON.stringify({ email, password })
     })
