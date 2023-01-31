@@ -101,7 +101,7 @@ function makeRegister(uri, email, firstName, lastName, password, confirm_passwor
     fetch(uri + "/api/users/", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "text/plain"
         },
         body: JSON.stringify({ email, emailConfirmed: false, firstName, lastName, password })
     })
