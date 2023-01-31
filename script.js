@@ -71,6 +71,7 @@ function getJobs(uri, keyWord) {
 function makeSignIn(uri, email, password) {
     fetch(uri + "/verification/", {
         method: "POST",
+        mode: "cors",
         headers: {
             "Content-Type": "application/json"
         },
