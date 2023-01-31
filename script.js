@@ -72,7 +72,7 @@ function makeSignIn(uri, email, password) {
     fetch(uri + "/verification/", {
         method: "POST",
         headers: {
-            "Content-Type": "plain/text"
+            "Content-Type": "application/json"
         },
         body: JSON.stringify({ email, password })
     })
@@ -101,7 +101,7 @@ function makeRegister(uri, email, firstName, lastName, password, confirm_passwor
     fetch(uri + "/api/users/", {
         method: "POST",
         headers: {
-            "Content-Type": "text/plain"
+            "Content-Type": "application/json"
         },
         body: JSON.stringify({ email, emailConfirmed: false, firstName, lastName, password })
     })
