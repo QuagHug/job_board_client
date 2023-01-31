@@ -73,8 +73,8 @@ function makeSignIn(uri, email, password) {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ email, password })
+        },  
+        body: { email, password }
     })
     .then(async res => {
         const result = await res.json();
