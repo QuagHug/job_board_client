@@ -74,7 +74,6 @@ function makeSignIn(uri, email, password) {
         headers: {
             "Content-Type": "application/json"
         },  
-        credentials: "include",
         body: JSON.stringify({ email, password })
     })
     .then(async res => {
