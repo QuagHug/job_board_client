@@ -1,5 +1,5 @@
 const APP_URI = "https://job-board-quaghug.vercel.app";
-const MAIN_PAGE_URI = "/index"
+const MAIN_PAGE_URI = "https://job-board-client-zeta.vercel.app"
 const form = document.getElementById("search-input");
 const search_board = document.getElementById("search-result");
 const search_button = document.getElementById("search-button");
@@ -72,7 +72,6 @@ function makeSignIn(uri, email, password) {
     fetch(uri + "/verification/", {
         method: "POST",
         headers: {
-            'Accept': 'application/json',
             "Content-Type": "application/json"
         },  
         body: JSON.stringify({ email, password })
