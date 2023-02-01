@@ -138,7 +138,7 @@ function checkLogin() {
     })
 }
 
-// window.addEventListener("load", checkLogin);
+window.addEventListener("load", checkLogin);
 
 if(search_button) search_button.addEventListener("click", event => { 
     const searchItem = form.value;
