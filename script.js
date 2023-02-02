@@ -153,7 +153,6 @@ if(login_button) login_button.addEventListener("click", event => {
     const email = email_form.value;
     const password = password_form.value;
     makeSignIn(APP_URI, email, password);
-    console.log(document.cookie);
 })
 
 if(register_button) register_button.addEventListener("click", event => { 
