@@ -74,6 +74,7 @@ function makeSignIn(uri, email, password) {
         headers: {
             "Content-Type": "application/json"
         },  
+        
         body: JSON.stringify({ email, password })
     })
     .then(async res => {
@@ -152,6 +153,7 @@ if(login_button) login_button.addEventListener("click", event => {
     const email = email_form.value;
     const password = password_form.value;
     makeSignIn(APP_URI, email, password);
+    console.log(document.cookie);
 })
 
 if(register_button) register_button.addEventListener("click", event => { 
