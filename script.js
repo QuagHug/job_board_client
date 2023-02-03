@@ -86,6 +86,7 @@ function makeSignIn(uri, email, password) {
             errorText.setAttribute("class", "error-text");
             return error_card.appendChild(errorText);
         } 
+        console.log(res.headers);
         // window.location.replace(MAIN_PAGE_URI);
     })
     
