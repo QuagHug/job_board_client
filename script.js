@@ -88,6 +88,7 @@ function makeSignIn(uri, email, password) {
         } 
         console.log(res.headers);
         // window.location.replace(MAIN_PAGE_URI);
+        document.cookie = "username=John Doe";
     })
     
 } 
