@@ -69,6 +69,8 @@ function getJobs(uri, keyWord) {
 }
 
 function makeSignIn(uri, email, password) {
+
+    console.log("cookie" + document.cookie);
     fetch(uri + "/verification/", {
         method: "POST",
         headers: {
