@@ -69,8 +69,6 @@ function getJobs(uri, keyWord) {
 }
 
 function makeSignIn(uri, email, password) {
-
-    console.log("cookie" + document.cookie);
     fetch(uri + "/verification/", {
         method: "POST",
         headers: {
@@ -88,10 +86,9 @@ function makeSignIn(uri, email, password) {
             errorText.setAttribute("class", "error-text");
             return error_card.appendChild(errorText);
         } 
-        console.log(res.headers);
         // window.location.replace(MAIN_PAGE_URI);
-        document.cookie = "username=John Doe";
-        console.log("cookie" + document.cookie);
+        const expireDate = new Date(Date().getTime() + result.authentication.expire).toISOString();
+        document.cookie(`jwt=${result.authentication.jwt}; expire=${expireDate}`);
     })
     
 } 
