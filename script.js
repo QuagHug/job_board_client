@@ -87,7 +87,7 @@ function makeSignIn(uri, email, password) {
             return error_card.appendChild(errorText);
         } 
         const expireDate = new Date((new Date()).getTime() + result.authentication.expire).toISOString();
-        document.cookie = `jwt=${result.authentication.jwt}; expire=${expireDate}`;
+        document.cookie = `jwt=${result.authentication.jwt}; expire=${expireDate}; path=/`;
         window.location.replace(MAIN_PAGE_URI);
     })
     
