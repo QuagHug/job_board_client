@@ -86,9 +86,9 @@ function makeSignIn(uri, email, password) {
             errorText.setAttribute("class", "error-text");
             return error_card.appendChild(errorText);
         } 
-        // window.location.replace(MAIN_PAGE_URI);
         const expireDate = new Date((new Date()).getTime() + result.authentication.expire).toISOString();
         document.cookie = `jwt=${result.authentication.jwt}; expire=${expireDate}`;
+        window.location.replace(MAIN_PAGE_URI);
     })
     
 } 
