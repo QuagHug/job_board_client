@@ -130,8 +130,8 @@ function makeRegister(uri, email, firstName, lastName, password, confirm_passwor
     })
 }
 
-function checkLogin(jwt) {
-    fetch(APP_URI, {
+function checkLogin(jwt, uri) {
+    fetch(uri + "/authenticate", {
         headers: {
             "jwt": jwt
         }
@@ -149,7 +149,7 @@ function checkLogin(jwt) {
 
 window.addEventListener("load", event => {
     console.log(sessionStorage.jwt);
-    if(sessionStorage.jwt) checkLogin(sessionStorage.jwt);
+    if(sessionStorage.jwt) checkLogin(sessionStorage.jwt, APP_URI);
 })
 
 if(search_button) search_button.addEventListener("click", event => { 
