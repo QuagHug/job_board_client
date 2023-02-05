@@ -130,9 +130,6 @@ function makeRegister(uri, email, firstName, lastName, password, confirm_passwor
     })
 }
 
-console.log(sessionStorage.jwt);
-
-
 function checkLogin(jwt) {
     fetch(APP_URI, {
         headers: {
