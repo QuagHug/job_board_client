@@ -40,7 +40,7 @@ ul > a {
     text-decoration: none;
     text-align: center;
     font-weight: 600;
-    border-radius: 5%;
+    border-radius: 10px;
 }
 
 #search-text {
