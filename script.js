@@ -86,8 +86,9 @@ function makeSignIn(uri, email, password) {
             errorText.setAttribute("class", "error-text");
             return error_card.appendChild(errorText);
         } 
-        const expireDate = new Date((new Date()).getTime() + result.authentication.expire).toISOString();
-        document.cookie = `jwt=${result.authentication.jwt}; expire=${expireDate}; path=/`;
+        // const expireDate = new Date((new Date()).getTime() + result.authentication.expire).toISOString();
+        // document.cookie = `jwt=${result.authentication.jwt}; expire=${expireDate}; path=/`;
+        sessionStorage.setItem("jwt", result.authentication.jwt);
         window.location.replace(MAIN_PAGE_URI);
     })
     
@@ -129,8 +130,12 @@ function makeRegister(uri, email, firstName, lastName, password, confirm_passwor
     })
 }
 
-function checkLogin() {
-    fetch(APP_URI)
+function checkLogin(jwt) {
+    fetch(APP_URI, {
+        headers: {
+            jwt
+        }
+    })
     .then(async res => {
         const result = await res.json();
         if(res.status != 200) return;
@@ -141,7 +146,9 @@ function checkLogin() {
     })
 }
 
-window.addEventListener("load", checkLogin);
+window.addEventListener("load", event => {
+    if(!sessionStorage.jwt) checkLogin(sessionStorage.jwt);
+})
 
 if(search_button) search_button.addEventListener("click", event => { 
     const searchItem = form.value;
