@@ -147,6 +147,7 @@ function checkLogin(jwt) {
 }
 
 window.addEventListener("load", event => {
+    console.log(sessionStorage.jwt);
     if(sessionStorage.jwt) checkLogin(sessionStorage.jwt);
 })
 
