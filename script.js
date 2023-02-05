@@ -138,7 +138,6 @@ function checkLogin(jwt, uri) {
     })
     .then(async res => {
         const result = await res.json();
-        console.log(result);
         if(res.status != 200) return;
         main_login_button.remove();
         const login_user = document.createElement("a");
@@ -149,7 +148,6 @@ function checkLogin(jwt, uri) {
 }
 
 window.addEventListener("load", event => {
-    console.log(sessionStorage.jwt);
     if(sessionStorage.jwt) checkLogin(sessionStorage.jwt, APP_URI);
 })
 
