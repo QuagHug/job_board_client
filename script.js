@@ -148,6 +148,7 @@ function checkLogin(jwt, uri) {
 }
 
 window.addEventListener("load", event => {
+    console.log(window.location.href);
     if(sessionStorage.jwt) checkLogin(sessionStorage.jwt, APP_URI);
 })
 
