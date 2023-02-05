@@ -147,7 +147,7 @@ function checkLogin(jwt) {
 }
 
 window.addEventListener("load", event => {
-    if(!sessionStorage.jwt) checkLogin(sessionStorage.jwt);
+    if(sessionStorage.jwt) checkLogin(sessionStorage.jwt);
 })
 
 if(search_button) search_button.addEventListener("click", event => { 
