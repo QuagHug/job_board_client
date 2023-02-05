@@ -3,7 +3,7 @@ const MAIN_PAGE_URI = "https://job-board-client-zeta.vercel.app"
 const form = document.getElementById("search-input");
 const search_board = document.getElementById("search-result");
 const search_button = document.getElementById("search-button");
-const nav_bar = document.getElementById("nav_bar");
+const nav_bar = document.getElementById("nav-bar");
 
 const email_form = document.getElementById("email-input");
 const password_form = document.getElementById("password-input");
