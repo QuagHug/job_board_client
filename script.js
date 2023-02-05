@@ -142,7 +142,7 @@ function checkLogin(jwt, uri) {
         if(res.status != 200) return;
         main_login_button.remove();
         const login_user = document.createElement("a");
-        login_user.innerHTML = result.data.attributes.firstName + result.data.attributes.lastName;
+        login_user.innerHTML = result.data.attributes.firstName + ' ' + result.data.attributes.lastName;
         login_user.setAttribute("class", "login");
         return nav_bar.appendChild(login_user);
     })
