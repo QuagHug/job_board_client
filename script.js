@@ -133,7 +133,7 @@ function makeRegister(uri, email, firstName, lastName, password, confirm_passwor
 function checkLogin(jwt) {
     fetch(APP_URI, {
         headers: {
-            jwt
+            "jwt": jwt
         }
     })
     .then(async res => {
