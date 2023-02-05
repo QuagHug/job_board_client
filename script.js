@@ -138,6 +138,7 @@ function checkLogin(jwt) {
     })
     .then(async res => {
         const result = await res.json();
+        console.log(result);
         if(res.status != 200) return;
         main_login_button.remove();
         const login_user = document.createElement("a");
