@@ -149,7 +149,10 @@ function checkLogin(jwt, uri) {
 
 window.addEventListener("load", event => {
     console.log(window.location.href);
-    if(sessionStorage.jwt && (window.location.href == MAIN_PAGE_URI + "/index.html" || window.location.href == MAIN_PAGE_URI + '/')) checkLogin(sessionStorage.jwt, APP_URI) && search_button.dispatchEvent(new Event("click"));
+    if(sessionStorage.jwt && (window.location.href == MAIN_PAGE_URI + "/index.html" || window.location.href == MAIN_PAGE_URI + '/')) {
+        checkLogin(sessionStorage.jwt, APP_URI);
+        search_button.dispatchEvent(new Event("click"))
+    }
 })
 
 if(search_button) search_button.addEventListener("click", event => { 
