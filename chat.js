@@ -24,7 +24,7 @@ function displayCandidateMessage(message) {
 
 socket.emit("send-message-candidate", "hello");
 
-if(!sessionStorage.jwt && sessionStorage.userType == "candidate") {
+if(sessionStorage.jwt && sessionStorage.userType == "undefined") {
     socket.emit("join-room", sessionStorage.getItem("currentJobRecruiterId"), sessionStorage.getItem("userId"));
     send_button.addEventListener("click", event => {
         const message = message_input.value;
