@@ -1,4 +1,4 @@
-const socket = io("https://job-board-hung-luu.herokuapp.com/api/users", {
+const socket = io("https://job-board-hung-luu.herokuapp.com/socket.io/socket.io.js", {
     transports: ['websocket']
 });
 
