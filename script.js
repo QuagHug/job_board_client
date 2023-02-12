@@ -1,5 +1,5 @@
-const APP_URI = "https://job-board-quaghug.vercel.app";
-const MAIN_PAGE_URI = "https://job-board-client-zeta.vercel.app"
+const APP_URI = "https://job-board-hung-luu.herokuapp.com";
+const MAIN_PAGE_URI = "https://job-board-hung-luu-client.herokuapp.com"
 const form = document.getElementById("search-input");
 const search_board = document.getElementById("search-result");
 const search_button = document.getElementById("search-button");
