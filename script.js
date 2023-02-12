@@ -24,8 +24,6 @@ const register_error_card = document.getElementById("register-error-card");
 
 const main_login_button = document.getElementById("main_login_button");
 
-
-
 function getJobs(uri, keyWord) {
     console.log("here");
     fetch(uri+`/jobs/search?title=${keyWord}`)
@@ -37,6 +35,7 @@ function getJobs(uri, keyWord) {
 
             const job_card = document.createElement("div");
             job_card.setAttribute("class", "job-card");
+            job_card.setAttribute("job_id", job.attributes.recruiterId);
 
             const job_image = document.createElement("img");
             job_image.setAttribute("class", "company-logo");
@@ -54,8 +53,11 @@ function getJobs(uri, keyWord) {
 
             const job_info3 = document.createElement("div");
             job_info3.setAttribute("class", "job-info");
-            job_info3.innerHTML = `Title: ${job.attributes.level}`
+            job_info3.innerHTML = `Level: ${job.attributes.level}`
 
+            const apply_button = document.createElement("button");
+            apply_button.setAttribute("class", "apply-button");
+            apply_button.innerHTML = "Apply/Connect now";
             
             job_image.src = company.logoUrl;
             job_card.appendChild(job_image);
@@ -63,7 +65,13 @@ function getJobs(uri, keyWord) {
             info_card.appendChild(job_info1);
             info_card.appendChild(job_info2);
             info_card.appendChild(job_info3);
+            info_card.appendChild(apply_button);
             search_board.appendChild(job_card);
+
+            apply_button.addEventListener("click", event => {
+                sessionStorage.setItem("currentJobRecruiterId", job.attributes.recruiterId);
+                window.location.replace(MAIN_PAGE_URI+"/chat.html");
+            })
         })
     })
 }
@@ -89,6 +97,8 @@ function makeSignIn(uri, email, password) {
         // const expireDate = new Date((new Date()).getTime() + result.authentication.expire).toISOString();
         // document.cookie = `jwt=${result.authentication.jwt}; expire=${expireDate}; path=/`;
         sessionStorage.setItem("jwt", result.authentication.jwt);
+        sessionStorage.setItem("userType", result.data.attributes.userType);
+        sessionStorage.setItem("userId", result.data.attributes._id);
         window.location.replace(MAIN_PAGE_URI);
     })
     
@@ -148,7 +158,6 @@ function checkLogin(jwt, uri) {
 }
 
 window.addEventListener("load", event => {
-    console.log(window.location.href);
     if(sessionStorage.jwt && (window.location.href == MAIN_PAGE_URI + "/index.html" || window.location.href == MAIN_PAGE_URI + '/')) {
         checkLogin(sessionStorage.jwt, APP_URI);
         search_button.dispatchEvent(new Event("click"))

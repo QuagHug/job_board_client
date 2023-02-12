@@ -1,0 +1,22 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "chat.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuagHug/job_board_client.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QuagHug/job_board_client/issues"
+  },
+  "homepage": "https://github.com/QuagHug/job_board_client#readme",
+  "dependencies": {
+    "socket.io-client": "^4.6.0"
+  }
+}
