@@ -1,4 +1,4 @@
-const socket = io("http://localhost:4000");
+const socket = io("https://job-board-quaghug.vercel.app");
 
 const message_input = document.getElementById("message-input");
 const send_button = document.getElementById("send-button");
