@@ -1,4 +1,4 @@
-const socket = io("https://job-board-quaghug.vercel.app", {
+const socket = io("https://job-board-hung-luu.herokuapp.com/api/users", {
     transports: ['websocket']
 });
 
@@ -21,6 +21,8 @@ function displayCandidateMessage(message) {
     msg_container.appendChild(display_msg);
     chat_container.appendChild(msg_container);
 }
+
+socket.emit("send-message-candidate", "hello");
 
 if(!sessionStorage.jwt && sessionStorage.userType == "candidate") {
     socket.emit("join-room", sessionStorage.getItem("currentJobRecruiterId"), sessionStorage.getItem("userId"));
