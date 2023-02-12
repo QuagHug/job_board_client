@@ -1,4 +1,8 @@
-const socket = io("https://job-board-quaghug.vercel.app");
+const socket = io("https://job-board-quaghug.vercel.app", {
+    path: '/socket.io',
+    transports: ['websocket'],
+    secure: true,
+});
 
 const message_input = document.getElementById("message-input");
 const send_button = document.getElementById("send-button");
