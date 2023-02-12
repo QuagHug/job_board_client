@@ -20,7 +20,7 @@ function displayCandidateMessage(message) {
     chat_container.appendChild(msg_container);
 }
 
-if(sessionStorage.jwt && sessionStorage.userType == "candidate") {
+if(!sessionStorage.jwt && sessionStorage.userType == "candidate") {
     socket.emit("join-room", sessionStorage.getItem("currentJobRecruiterId"), sessionStorage.getItem("userId"));
     send_button.addEventListener("click", event => {
         const message = message_input.value;
