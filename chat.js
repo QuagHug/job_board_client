@@ -1,5 +1,5 @@
 const socket = io("https://job-board-quaghug.vercel.app", {
-    transports: ['websocket']
+    transports: ["polling", "websocket"]
 });
 
 const message_input = document.getElementById("message-input");
