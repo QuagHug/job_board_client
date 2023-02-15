@@ -77,7 +77,7 @@ function getChatForRecruiter() {
             user_card.innerHTML = user.attributes.firstName + ' ' + user.attributes.lastName;
             user_card.addEventListener("click", async event => {
                 chat_display.innerHTML = "";
-                const response = await fetch(APP_URI + "/chat/message" + new URLSearchParams({ recruiterId: sessionStorage.getItem("userId"), candidateId: user.attributes._id }));
+                const response = await fetch(APP_URI + "/chat/message?" + new URLSearchParams({ recruiterId: sessionStorage.getItem("userId"), candidateId: user.attributes._id }));
                 const chatResult = await response.json();
                 chatResult.data.forEach(chat => {
                     if(sessionStorage.getItem("userId") == chat.attributes.from_id) {
