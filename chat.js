@@ -47,7 +47,7 @@ function displayRecruiterMessage(message) {
 socket.emit("send-message-candidate", "hello");
 
 async function getMessageForCandidate() {
-    const response = await fetch(APP_URI + "/chat/recruiter-message?" + new URLSearchParams({ recruiterId: sessionStorage.getItem("currentJobRecruiterId"), candidateId: sessionStorage.getItem("userId") }));
+    const response = await fetch(APP_URI + "/chat/message?" + new URLSearchParams({ recruiterId: sessionStorage.getItem("currentJobRecruiterId"), candidateId: sessionStorage.getItem("userId") }));
     const chatResult = await response.json();
     chatResult.data.forEach(chat => {
         if(sessionStorage.getItem("currentJobRecruiterId") == chat.attributes.from_id) {
@@ -69,9 +69,7 @@ if(sessionStorage.getItem("jwt") && sessionStorage.getItem("userType") == "candi
 } 
 
 function getChatForRecruiter() {
-    fetch(APP_URI + "/chat/recruiter-chat", {
-        body: JSON.stringify({ _id: sessionStorage.getItem("userId") })
-    })
+    fetch(APP_URI + "/chat/recruiter-chat?" + new URLSearchParams({ _id: sessionStorage.getItem("userId") }))
     .then(async res => {
         const result = await res.json();
         const user_container = document.createElement("div");
@@ -84,9 +82,7 @@ function getChatForRecruiter() {
             user_container.appendChild(user_card);
             user_card.addEventListener("click", async event => {
                 chat_display.innerHTML = "";
-                const response = await fetch(APP_URI + "/chat/recruiter-message", {
-                    body: JSON.stringify({ recruiterId: sessionStorage.getItem("userId"), candidateId: user.attributes._id })
-                });
+                const response = await fetch(APP_URI + "/chat/message" + new URLSearchParams({ recruiterId: sessionStorage.getItem("userId"), candidateId: user.attributes._id }));
                 const chatResult = await response.json();
                 chatResult.data.forEach(chat => {
                     if(sessionStorage.getItem("userId") == chat.attributes.from_id) {
