@@ -1,6 +1,6 @@
 const APP_URI = "https://job-board-hung-luu.herokuapp.com";
 
-const socket = io("https://job-board-hung-luu.herokuapp.com/socket.io/socket.io.js", {
+const socket = io("https://job-board-hung-luu.herokuapp.com", {
     transports: ['websocket']
 });
 
