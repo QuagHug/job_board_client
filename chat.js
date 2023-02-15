@@ -2,7 +2,6 @@ const APP_URI = "https://job-board-hung-luu.herokuapp.com";
 
 const socket = io("https://job-board-hung-luu.herokuapp.com");
 
-const body = document.getElementsByTagName("body");
 const message_input = document.getElementById("message-input");
 const send_button = document.getElementById("send-button");
 const recruiter_msg_container = document.getElementById("recruiter-msg-container");
@@ -97,7 +96,7 @@ function getChatForRecruiter() {
                 socket.on("receive-message", displayCandidateMessage);
             })            
         })
-        body.appendChild(user_container);
+        document.body.appendChild(user_container);
     })
 }
 
