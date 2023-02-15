@@ -2,6 +2,7 @@ const APP_URI = "https://job-board-hung-luu.herokuapp.com";
 
 const socket = io("https://job-board-hung-luu.herokuapp.com");
 
+const body = document.getElementsByTagName("body");
 const message_input = document.getElementById("message-input");
 const send_button = document.getElementById("send-button");
 const recruiter_msg_container = document.getElementById("recruiter-msg-container");
@@ -69,6 +70,7 @@ function getChatForRecruiter() {
     .then(async res => {
         const result = await res.json();
         const user_container = document.createElement("div");
+        user_container.setAttribute("id", "user-container");
         result.data.forEach(user => {
             user_container.setAttribute("id", "chat-container")
             const user_card = document.createElement("div");
@@ -95,6 +97,7 @@ function getChatForRecruiter() {
                 socket.on("receive-message", displayCandidateMessage);
             })            
         })
+        body.appendChild(user_container);
     })
 }
 
