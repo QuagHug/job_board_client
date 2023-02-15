@@ -74,8 +74,7 @@ function getChatForRecruiter() {
             const user_card = document.createElement("div");
             user_card.setAttribute("userId", user.attributes._id);
             user_card.setAttribute("class", "user-card")
-            user_card.innerHTML = user.attributes.firstName + ' ' + user.attributes.firstName;
-            user_container.appendChild(user_card);
+            user_card.innerHTML = user.attributes.firstName + ' ' + user.attributes.lastName;
             user_card.addEventListener("click", async event => {
                 chat_display.innerHTML = "";
                 const response = await fetch(APP_URI + "/chat/message" + new URLSearchParams({ recruiterId: sessionStorage.getItem("userId"), candidateId: user.attributes._id }));
@@ -94,6 +93,7 @@ function getChatForRecruiter() {
                 socket.emit("join-room-recruiter", sessionStorage.getItem("userId"), user.attributes._id);
                 socket.on("receive-message", displayCandidateMessage);
             })            
+            user_container.appendChild(user_card);
         })
         document.body.appendChild(user_container);
     })
