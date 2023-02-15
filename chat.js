@@ -47,9 +47,7 @@ function displayRecruiterMessage(message) {
 socket.emit("send-message-candidate", "hello");
 
 async function getMessageForCandidate() {
-    const response = await fetch(APP_URI + "/chat/recruiter-message", {
-        body: JSON.stringify({ recruiterId: sessionStorage.getItem("currentJobRecruiterId"), candidateId: sessionStorage.getItem("userId") })
-    });
+    const response = await fetch(APP_URI + "/chat/recruiter-message?" + new URLSearchParams({ recruiterId: sessionStorage.getItem("currentJobRecruiterId"), candidateId: sessionStorage.getItem("userId") }));
     const chatResult = await response.json();
     chatResult.data.forEach(chat => {
         if(sessionStorage.getItem("currentJobRecruiterId") == chat.attributes.from_id) {
