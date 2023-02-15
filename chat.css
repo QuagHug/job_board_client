@@ -46,6 +46,24 @@ body {
     cursor: pointer;
 }
 
+#user-container {
+    width: 10%;
+    position: fixed;
+    top: 70px;
+    left: 1.8%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.user-card {
+    padding: 5px;
+    padding-left: 10px;
+    margin: 7px;
+    background-color: #ffb347;
+    border-radius: 5px;
+}
+
 #logo-text {
     position: absolute;
     top: -15px;
@@ -93,7 +111,7 @@ body {
 }
 
 .candidate-display-msg {
-    margin: 0px 10px 0px 5px;
+    margin: 0px 10px 5px 0px;
     padding: 10px;
     background-color: white;
     border-radius: 10px;

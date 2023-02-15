@@ -21,6 +21,7 @@ const register_first_name_form = document.getElementById("register-first-name-in
 const register_last_name_form = document.getElementById("register-last-name-input");
 const register_button = document.getElementById("register-button");
 const register_error_card = document.getElementById("register-error-card");
+const user_type = document.getElementById("user-type");
 
 const main_login_button = document.getElementById("main_login_button");
 
@@ -104,7 +105,7 @@ function makeSignIn(uri, email, password) {
     
 } 
 
-function makeRegister(uri, email, firstName, lastName, password, confirm_password) {
+function makeRegister(uri, email, firstName, lastName, password, confirm_password, userType) {
     if(password != confirm_password) {
         const errorText = document.createElement("div");
         errorText.innerHTML = "Password different from password confirm";
@@ -117,7 +118,7 @@ function makeRegister(uri, email, firstName, lastName, password, confirm_passwor
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ email, emailConfirmed: false, firstName, lastName, password })
+        body: JSON.stringify({ email, emailConfirmed: false, firstName, lastName, password, userType })
     })
     .then(async res => {
         const result = await res.json();
@@ -185,8 +186,8 @@ if(register_button) register_button.addEventListener("click", event => {
     const confirm_password = register_confirm_password_form.value;
     const firstName = register_first_name_form.value;
     const lastName = register_last_name_form.value;
-    
-    makeRegister(APP_URI, email, firstName, lastName, password, confirm_password);
+    const userType = user_type.value;
+    makeRegister(APP_URI, email, firstName, lastName, password, confirm_password, userType);
 })
 
 if(login_text) login_text.addEventListener("click", event => { 
