@@ -98,4 +98,4 @@ function getChatForRecruiter() {
     })
 }
 
-if(sessionStorage.jwt && sessionStorage.userType == "recruiter") getChatForRecruiter();
+if(sessionStorage.jwt && sessionStorage.getItem("userType") == "recruiter") getChatForRecruiter();
