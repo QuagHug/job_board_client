@@ -60,7 +60,7 @@ if(sessionStorage.getItem("jwt") && sessionStorage.getItem("userType") == "candi
     send_button.addEventListener("click", event => {
         const message = message_input.value;
         displayCandidateMessage(message);
-        socket.emit("send-message-candidate", message, sessionStorage.getItem("currentJobRecruiterId")+sessionStorage.getItem("userId"));
+        socket.emit("send-message-candidate", message, sessionStorage.getItem("currentJobRecruiterId"), sessionStorage.getItem("userId"));
     }) 
     socket.emit("join-room-candidate", sessionStorage.getItem("currentJobRecruiterId"), sessionStorage.getItem("userId"));
     socket.on("receive-message", displayRecruiterMessage);
@@ -88,6 +88,11 @@ function getChatForRecruiter() {
                     }
                     displayCandidateMessage(chat.attributes.message);
                 })
+                send_button.addEventListener("click", event => {
+                    const message = message_input.value;
+                    displayRecruiterMessage(message);
+                    socket.emit("send-message-recruiter", message, sessionStorage.getItem("userId"), user.attributes._id);
+                }) 
                 socket.emit("join-room-recruiter", sessionStorage.getItem("userId"), user.attributes._id);
                 socket.on("receive-message", displayCandidateMessage);
             })            
