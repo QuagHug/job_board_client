@@ -71,10 +71,9 @@ function getChatForRecruiter() {
         const user_container = document.createElement("div");
         user_container.setAttribute("id", "user-container");
         result.data.forEach(user => {
-            user_container.setAttribute("id", "chat-container")
             const user_card = document.createElement("div");
             user_card.setAttribute("userId", user.attributes._id);
-            user_card.setAttribute("class", "chat-container")
+            user_card.setAttribute("class", "user-card")
             user_card.innerHTML = user.attributes.firstName + ' ' + user.attributes.firstName;
             user_container.appendChild(user_card);
             user_card.addEventListener("click", async event => {
