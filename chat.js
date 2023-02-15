@@ -27,7 +27,7 @@ function displayRecruiterMessage(message) {
     const msg_container = document.createElement("div");
     msg_container.setAttribute("class", "recruiter-msg-container");
 
-    const chat_ava = document.createElement("div");
+    const chat_ava = document.createElement("img");
     chat_ava.setAttribute("src", "img/chat-avatar.png");
     chat_ava.setAttribute("width", "40px");
     chat_ava.setAttribute("height", "40px");
@@ -41,8 +41,6 @@ function displayRecruiterMessage(message) {
     msg_container.appendChild(display_msg);
     chat_container.appendChild(msg_container);
 }
-
-socket.emit("send-message-candidate", "hello");
 
 async function getMessageForCandidate() {
     const response = await fetch(APP_URI + "/chat/message?" + new URLSearchParams({ recruiterId: sessionStorage.getItem("currentJobRecruiterId"), candidateId: sessionStorage.getItem("userId") }));
