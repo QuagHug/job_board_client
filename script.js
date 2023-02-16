@@ -166,6 +166,7 @@ window.addEventListener("load", event => {
         search_button.dispatchEvent(new Event("click"))
     }
     if(sessionStorage.getItem("userType") == "recruiter") {
+        console.log("success");
         const dashboard = document.createElement("a");
         dashboard.innerHTML = "Dashboard";
         dashboard.setAttribute("href", "./chat.html");
