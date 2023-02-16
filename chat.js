@@ -1,4 +1,5 @@
 const APP_URI = "https://job-board-hung-luu.herokuapp.com";
+const MAIN_PAGE_URI = "https://job-board-hung-luu-client.herokuapp.com"
 
 const socket = io("https://job-board-hung-luu.herokuapp.com");
 
