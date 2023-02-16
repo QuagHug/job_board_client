@@ -166,9 +166,9 @@ window.addEventListener("load", event => {
         search_button.dispatchEvent(new Event("click"))
     }
     if(sessionStorage.getItem("userType") == "recruiter") {
-        const dashboard = document.createElement();
+        const dashboard = document.createElement("a");
         dashboard.innerHTML = "Dashboard";
-        dashboard.setAttribute("href", "/chat.html");
+        dashboard.setAttribute("href", "./chat.html");
         nav_bar_list.appendChild(dashboard)
     }
 })
