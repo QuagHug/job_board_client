@@ -4,6 +4,8 @@ const form = document.getElementById("search-input");
 const search_board = document.getElementById("search-result");
 const search_button = document.getElementById("search-button");
 const nav_bar = document.getElementById("nav-bar");
+const nav_bar_list = document.getElementById("nav-bar-list");
+
 
 const email_form = document.getElementById("email-input");
 const password_form = document.getElementById("password-input");
@@ -159,9 +161,15 @@ function checkLogin(jwt, uri) {
 }
 
 window.addEventListener("load", event => {
-    if(sessionStorage.jwt && (window.location.href == MAIN_PAGE_URI + "/index.html" || window.location.href == MAIN_PAGE_URI + '/')) {
+    if(sessionStorage.getItem("jwt") && (window.location.href == MAIN_PAGE_URI + "/index.html" || window.location.href == MAIN_PAGE_URI + '/')) {
         checkLogin(sessionStorage.jwt, APP_URI);
         search_button.dispatchEvent(new Event("click"))
+    }
+    if(sessionStorage.getItem("userType") == "recruiter") {
+        const dashboard = document.createElement();
+        dashboard.innerHTML = "Dashboard";
+        dashboard.setAttribute("href", "/chat.html");
+        nav_bar_list.appendChild(dashboard)
     }
 })
 
