@@ -161,11 +161,11 @@ function checkLogin(jwt, uri) {
 }
 
 window.addEventListener("load", event => {
+    console.log("userType" + sessionStorage.getItem("userType"));
     if(sessionStorage.getItem("jwt") && (window.location.href == MAIN_PAGE_URI + "/index.html" || window.location.href == MAIN_PAGE_URI + '/')) {
         checkLogin(sessionStorage.jwt, APP_URI);
         search_button.dispatchEvent(new Event("click"))
     }
-    console.log("userType" + sessionStorage.getItem("userType"));
     if(sessionStorage.getItem("userType") == "recruiter") {
         console.log("success");
         const dashboard = document.createElement("a");
