@@ -12,6 +12,18 @@ body {
     background-color: 	#D3D3D3;
 }
 
+#back-button {
+    width: 5%;
+    position: fixed;
+    left: 4%;
+    top: 15px;
+    padding: 10px;
+    background-color: #ffb347;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
 #chat-container {
     background-color: #ffb347;
     height: 80vh;
@@ -62,6 +74,7 @@ body {
     margin: 7px;
     background-color: #ffb347;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 #logo-text {

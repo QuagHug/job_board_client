@@ -20,7 +20,7 @@ function displayCandidateMessage(message) {
     display_msg.innerHTML = message;
     
     msg_container.appendChild(display_msg);
-    chat_container.appendChild(msg_container);
+    chat_display.appendChild(msg_container);
 }
 
 function displayRecruiterMessage(message) {
@@ -39,7 +39,7 @@ function displayRecruiterMessage(message) {
     
     msg_container.appendChild(chat_ava);
     msg_container.appendChild(display_msg);
-    chat_container.appendChild(msg_container);
+    chat_display.appendChild(msg_container);
 }
 
 async function getMessageForCandidate() {
