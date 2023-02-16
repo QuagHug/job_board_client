@@ -165,6 +165,7 @@ window.addEventListener("load", event => {
         checkLogin(sessionStorage.jwt, APP_URI);
         search_button.dispatchEvent(new Event("click"))
     }
+    console.log(sessionStorage.getItem("userType"));
     if(sessionStorage.getItem("userType") == "recruiter") {
         console.log("success");
         const dashboard = document.createElement("a");
