@@ -10,6 +10,11 @@ const candidate_msg_container = document.getElementById("candidate-msg-container
 const candidate_display_msg = document.getElementById("recruiter-display-msg");
 const chat_container = document.getElementById("chat-container");
 const chat_display = document.getElementById("chat-display");
+const back_button = document.getElementById("bakc-button")
+
+back_button.addEventListener("click", event => {
+    window.location.replace(MAIN_PAGE_URI);
+})
 
 function displayCandidateMessage(message) {
     const msg_container = document.createElement("div");
