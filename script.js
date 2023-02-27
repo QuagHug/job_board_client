@@ -6,7 +6,6 @@ const search_button = document.getElementById("search-button");
 const nav_bar = document.getElementById("nav-bar");
 const nav_bar_list = document.getElementById("nav-bar-list");
 
-
 const email_form = document.getElementById("email-input");
 const password_form = document.getElementById("password-input");
 const login_button = document.getElementById("login-button");
@@ -26,6 +25,7 @@ const register_error_card = document.getElementById("register-error-card");
 const user_type = document.getElementById("user-type");
 
 const main_login_button = document.getElementById("main_login_button");
+const menu_icon = document.getElementById("menu-icon");
 
 function getJobs(uri, keyWord) {
     console.log("here");
@@ -173,6 +173,10 @@ window.addEventListener("load", event => {
         dashboard.setAttribute("href", "./chat.html");
         nav_bar_list.appendChild(dashboard)
     }
+})
+
+if(menu_icon) menu_icon.addEventListener("click", event => {
+    nav_bar_list.classList.toggle("active");
 })
 
 if(search_button) search_button.addEventListener("click", event => { 
