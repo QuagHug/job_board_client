@@ -28,8 +28,8 @@ body {
 
 #chat-container {
     background-color: #ffb347;
-    height: 80vh;
-    min-width: 70%; 
+    min-height: 80vh;
+    width: 70%;
     margin-top: 30px;
     margin-bottom: 100px;
     border-radius: 10px;
